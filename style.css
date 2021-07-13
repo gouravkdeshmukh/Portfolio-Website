@@ -371,10 +371,56 @@ p{
 #project .pro_items:hover .pro_img img{
     transform:scale(1.1);
 }
-
-
 /*End of Project Section*/
+/*Contact Info*/
+#contact .contact{
+   
+    flex-direction: column;
+   max-width: 1200px;
+    margin: 0 auto;    
+}
 
+#contact .contact_items{
+    width: 300px;
+}
+
+#contact .contact_item{
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 18px 0px #0000002c; 
+    flex-direction: column;
+    justify-content: center;
+    transition: .3s ease box-shadow;
+}
+#contact .contact_item:hover{
+    box-shadow: 0px 0px 5px 0px #0000002c;
+}
+#contact .icon{
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#contact .contact_info h1{
+    font-size: 2.5rem;
+    font-weight: 500px;
+    margin-bottom: 5px;
+}
+
+#contact .contact_info h2{
+    font-size: 1.3rem;
+    line-height: .5rem;
+    font-weight: 500px;
+    margin-bottom: 5px;
+}
+
+/*End of contact info*/
 
 /* keyframe */
 @keyframes text-reveal-box {
