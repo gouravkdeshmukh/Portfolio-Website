@@ -167,8 +167,10 @@ p{
     
 }
 
-#about .about .section_title{
-    margin-bottom:50px ;
+#about .section_title{
+    margin-top: 100px;
+    margin-bottom: -50px;
+    
 }
 
 #about .col_left{
@@ -361,7 +363,7 @@ p{
     /* text-align: justify; */
 }
 #project .all_project .pro_img{
-    height: 300px;
+    height: 100%;
     flex-basis: 50%;
     overflow: hidden;
     position: relative;
@@ -391,16 +393,17 @@ p{
 #contact .contact{
    
     flex-direction: column;
-   max-width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;    
 }
 
 #contact .contact_items{
-    width: 300px;
+    width: 350px;
 }
 
 #contact .contact_item{
     width: 80%;
+    /* height: 80%; */
     padding: 20px;
     text-align: center;
     border-radius: 10px;
@@ -514,3 +517,146 @@ p{
     
 }
 /* end keyframe */
+
+/*media Queries*/
+
+
+/*for Tablet devices*/
+@media only screen and (min-width:768px)
+{
+    .hero_button{
+        font-size: 2.5rem;
+        padding: 20px 60px;
+
+    }
+
+    h1.section_title{
+        font-size: 6rem;
+    }
+
+    /* hero section */
+    #hero h1{
+        font-size: 7rem;
+        font-weight: 300;
+    }
+
+    /* about section */
+
+    #about .about{
+        flex-direction: row;
+    }
+
+    #about .col_left{
+        width: 600px;
+        height: 400px;
+        padding-left:60px;
+    }
+
+    #about .col_left .about_img::after{
+        width: 98%;
+        height: 98%;
+        left:-45px;
+        top:34px;
+        border : 10px solid crimson
+    }
+
+    #about .col_right{
+        padding: 30px;
+        text-align: left;
+    }
+
+    #about .col_right h1{
+        text-align: left;
+    }
+
+    #about p{
+        text-align: justify;
+    }
+
+    /* end of about section */
+
+    /* education section */
+    #educations .edu_items .edu_cards{
+        flex-basis: 100% ;
+    }
+
+    /* end of education section */
+
+    /* project section */
+
+    #project .pro_items{
+        flex-direction: row;
+        height: 400px;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        
+    }
+    #project .pro_items:nth-child(2n){
+        flex-direction: row-reverse;
+    }
+
+    #project .projects .pro_info{
+        height: 100%;
+    }
+    #project .pro_info img{
+        width: 100%;
+        height: 100%;
+    }
+
+    /* end of project section */
+
+    /* contact section */
+    #contact .section_title{
+        margin-top: -150px;
+    }
+    #contact .contact{
+        flex-direction: column;
+        padding: 100px 0px;
+        align-items: center;
+        justify-content: center;
+        min-width: 20vh;
+    }
+
+    #contact .contact_items{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        margin: 0 auto;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    #contact .contact .contact_item {
+        display: flex;
+        margin: 20px;
+        flex-direction: row;
+    }
+
+    #contact .contact_item icon{
+        width: 100px;
+        height: 100px;
+    }
+    #contact .contact_item icon img{
+        object-fit: contain;
+    }
+
+    #contact .contact_item .contact_info{
+        text-align: left;
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    #contact .contact_item .contact_info h2{
+        line-height: 1.2rem;
+    }
+
+    /* end of contact section */
+
+}   
+
+
+    
+
