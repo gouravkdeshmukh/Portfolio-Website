@@ -62,7 +62,120 @@ p{
     color: crimson;
 }
 
+/* header section */
+#header{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
 
+#header .header{
+    min-height: 8vh;
+    background-color: rgba(31, 30, 30, 0.24);
+
+}
+
+#header .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0px 10px;
+    
+}
+
+#header .navlist ul{
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+#header .navlist ul a{
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    padding: 20px ;
+}
+
+#header .navlist ul a::after{
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    color:rgba(248, 248, 255, 0.021);
+    font-size: 12rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+}
+
+#header .navlist ul li:hover a::after{
+    transform: translate(-50%,-50%) scale(1);
+    letter-spacing: initial;
+}
+
+/* hamburger */
+#header .hamburger{
+    z-index: 100;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header .hamburger .bar{
+    cursor: pointer;
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    left: 0;
+    transition: 0.3s ease;
+    transition-property: top, bottom;
+    position: absolute;
+    background-color: white;
+    z-index: -1;
+}
+
+#header .hamburger .bar::after{
+    top:8px;
+}
+#header .hamburger .bar::before{
+    bottom: 8px;
+}
+/* end of header section */
 
 
 /* hero section */
