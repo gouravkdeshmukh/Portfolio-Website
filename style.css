@@ -8,7 +8,8 @@
 
 html{
     font-size: 10px;
-    font-family: 'Montserrat', sans-serif ;   ;
+    font-family: 'Montserrat', sans-serif ;
+    scroll-behavior: smooth;
 }
 
 /* container class */
@@ -75,6 +76,7 @@ p{
 #header .header{
     min-height: 8vh;
     background-color: rgba(31, 30, 30, 0.24);
+    transition: 0.3s ease background-color;
 
 }
 
@@ -89,13 +91,13 @@ p{
     
 }
 
-#header .navlist ul{
+#header .nav_list ul{
     list-style: none;
     position: absolute;
     background-color: rgb(31, 30, 30);
     width: 100vw;
     height: 100vh;
-    left: 0;
+    left: 100%;
     top: 0;
     display: flex;
     justify-content: center;
@@ -103,9 +105,15 @@ p{
     z-index: 1;
     overflow-x: hidden;
     flex-direction: column;
+    transition: 0.5s ease left;
 }
 
-#header .navlist ul a{
+#header .nav_list ul.active{
+    left: 0;
+
+}
+
+#header .nav_list ul a{
     font-size: 2.5rem;
     font-weight: 500;
     letter-spacing: 0.2rem;
@@ -116,7 +124,7 @@ p{
     padding: 20px ;
 }
 
-#header .navlist ul a::after{
+#header .nav_list ul a::after{
     content: attr(data-after);
     position: absolute;
     top: 50%;
@@ -128,8 +136,10 @@ p{
     z-index: -1;
     transition: .3s ease letter-spacing;
 }
-
-#header .navlist ul li:hover a::after{
+#header .nav_list ul li:hover {
+    color: crimson;
+}
+#header .nav_list ul li:hover a::after{
     transform: translate(-50%,-50%) scale(1);
     letter-spacing: initial;
 }
@@ -146,6 +156,18 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(0.7);
+    margin-right: 20px;
+}
+
+#header .hamburger:after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: hamburger_puls 1s ease infinite;
 }
 
 #header .hamburger .bar{
@@ -175,6 +197,15 @@ p{
 #header .hamburger .bar::before{
     bottom: 8px;
 }
+
+#header .hamburger.active .bar::before{
+    bottom: 0;
+}
+#header .hamburger.active .bar::after
+{
+    top:0;
+}
+
 /* end of header section */
 
 
@@ -282,7 +313,7 @@ p{
 
 #about .section_title{
     margin-top: 100px;
-    margin-bottom: -50px;
+    /* margin-bottom: -50px; */
     
 }
 
@@ -633,6 +664,17 @@ p{
     }
     
 }
+
+@keyframes hamburger_puls {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
 /* end keyframe */
 
 /*media Queries*/
@@ -727,7 +769,7 @@ p{
 
     /* contact section */
     #contact .section_title{
-        margin-top: -150px;
+        margin-top: -80px;
     }
     #contact .contact{
         flex-direction: column;
@@ -743,14 +785,18 @@ p{
         flex-direction: row;
         margin: 0 auto;
         padding: 20px;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         
     }
 
     #contact .contact .contact_item {
         display: flex;
-        margin: 20px;
+        width: 100%;
+        height: 150px;
+        justify-content: space-evenly;
+        padding: 20px;
+        margin: 1.2%;
         flex-direction: row;
     }
 
@@ -776,11 +822,39 @@ p{
 }   
  /* media query for desktop */
 
-@media(min-width:1200px){
+@media only screen and (min-width:1200px){
+
+
+    /* header section */
+        #header .hamburger{
+            display: none;
+        }
+
+        #header .navbar .nav_list ul {
+            position: initial;
+            display: inline-block;
+            height: auto;
+            width: fit-content;
+            background-color: transparent;
+            padding: 12px;
+        }
+        
+        #header .navbar .nav_list a {
+            display:inline-block;
+        }
+
+        #header .navbar .nav_list a{
+            font-size: 1.5rem;
+        }
+
+        #header .navbar .nav_list ul a:after{
+            display: none;
+        }
+    /* end of header section */
     
-    #about .section_title{
-        margin-top: 70px;
-    }
+    /* #about .section_title{
+        margin-top: 300px;
+    } */
 
 
     #educations .edu_items{
